@@ -1,0 +1,188 @@
+@charset "utf-8";
+
+/*色*/
+:root {
+    --main-color: #00fa9a;
+    --bg-color: #ffffff;
+    --sub-color: #ff00ff;
+    --font-color: #2c2c2c;
+}
+
+/*全体*/
+body {
+    font-size: 16px;
+    font-family: 'Kiwi Maru', serif;
+    line-height: 1.5;
+    color: var(--font-color);
+}
+img {
+    max-width: 100%;
+}
+header {
+    border-top: 14px solid var(--main-color);
+    padding-top: 40px;
+    margin-bottom: 30px;
+}
+header h1 {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: .17em;
+    text-transform: uppercase;
+}
+header h1 span {
+    background-image: linear-gradient(135deg, var(--main-color) 50%, var(--sub-color) 100%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+h2 {
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: .17em;
+    margin-bottom: 10px;
+}
+.lead {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 11px;
+    letter-spacing: .05em;
+    line-height: 2;
+}
+h3 {
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+}
+main {
+    padding: 0 20px;
+}
+footer p {
+    background-color: var(--main-color);
+}
+footer {
+    background: url(../images/footer_sg.svg) no-repeat right top/contain;
+    margin-top: 60px;
+    padding-top: 68px;
+    border-bottom: 20px solid var(--main-color);
+}
+.menuList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.menuList li {
+    flex-basis: 40%;
+    margin-bottom: 28px;
+}
+.menuDetailSec {
+    padding: 25px 0;
+}
+
+/* ハンバーガーメニューボタン */
+.gMenu {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+}
+.gMenu .menu-icon {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    padding-top: 5px;
+    height: 12px;
+}
+.gMenu .menu-icon .navicon {
+    background: var(--sub-color);
+    content: "";
+    display: block;
+    height: 2px;
+    width: 31px;
+    position: relative;
+    transition: background .4s ease-out;
+}
+.gMenu .menu-icon .navicon::before,
+.gMenu .menu-icon .navicon::after {
+    background: var(--sub-color);
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .4s ease-out;
+    width: 100%;
+}
+.gMenu .menu-icon .navicon::before {top: 10px;}
+.gMenu .menu-icon .navicon::after {top: -10px;}
+.gMenu .menu {
+    background-color: rgba(255, 255, 255, 0.9);
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .6s;
+    text-align: center;
+}
+.gMenu .menu li:first-of-type {
+    padding-top: 25px;
+    padding-top: 50px;
+}
+.gMenu .menu li a {
+    display: block;
+    padding: 24px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.gMenu .menu li a:hover {
+    background-color: #f4f4f4;
+}
+.gMenu .menu-btn {
+    display: none;
+}
+.gMenu .menu-btn:checked ~ .menu {
+    max-height: 338px;
+    transition: max-height .6s;
+}
+.gMneu .menu-btn:checked ~ .menu-icon .navicon {background: transparent;}
+.gMenu .menu-btn:checked ~ .menu-icon .navicon::before {transform: rotate(-45deg);top: 0;}
+.gMenu .menu-btn:checked ~ .menu-icon .navicon::after {transform: rotate(-45deg);top: 0;}
+.gMenu .menu-icon {
+    top: 26px;
+}
+.gMenu .menu-icon .navicon,
+.gMenu .menu-icon .navicon::before,
+.gMenu .menu-icon .navicon::after {
+    background: var(--sub-color);
+}
+
+/*PC*/
+@media screen and (min-width:920px) {
+    main {
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+    header h1 {
+        font-size: 60px;
+    }
+    h2 {
+        font-size: 34px;
+        margin-bottom: 36px;
+    }
+    .lead {
+        font-size: 18px;
+        margin-bottom: 140px;
+    }
+    h3 {
+        font-size: 50px;
+        margin-bottom: 40px;
+    }
+    .menuList li {
+        flex-basis: 21%;
+    }
+    .menuDetailSec {
+        margin-bottom: 140px;
+    }
+}
