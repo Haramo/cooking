@@ -64,7 +64,7 @@ footer p {
     background-color: var(--main-color);
 }
 footer {
-    background: url(../images/footer_sg.svg) no-repeat right top/contain;
+    background: url(https://haramo.github.io/cooking/footer_sg.svg) no-repeat right top/contain;
     margin-top: 60px;
     padding-top: 68px;
     border-bottom: 20px solid var(--main-color);
