@@ -82,6 +82,14 @@ footer {
     padding: 25px 0;
 }
 
+.lum-ligntbox.lum-open {
+    z-index: 4;
+}
+.lum-ligntbox-inner img {
+    max-width: 120vh;
+    max-height: 80vh;
+}
+
 /* ハンバーガーメニューボタン */
 .gMenu {
     position: fixed;
